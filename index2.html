@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KYEE STORE - Detail Layanan</title>
+  <link rel="icon" href="logo.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .service-detail-card {
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      background: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-detail-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+    .btn-back {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: transform 0.3s;
+    }
+    .btn-back:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="logo.png" alt="KYEE STORE Logo">
+        KYEE STORE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Detail Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <section class="py-5 text-center bg-primary text-white">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Detail Layanan Kami</h1>
+      <p class="lead">Penjelasan lengkap tentang fitur, keunggulan, dan penggunaan tiap layanan</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container py-5">
+
+    <!-- Hosting Pterodactyl -->
+    <div class="service-detail-card">
+      <div class="text-center mb-4">
+        <i class="fas fa-feather-alt service-icon text-primary"></i>
+        <h2>Hosting Pterodactyl</h2>
+      </div>
+      <p><strong>Apa itu?</strong><br>
+        Panel kontrol modern untuk mengelola script Bot WhatsApp dan lainnya. Mudah digunakan, tampilan intuitif, dan cocok untuk pemula maupun profesional.</p>
+      
+      <h5>Fitur Utama:</h5>
+      <ul>
+        <li><i class="fas fa-check text-success"></i> 1-Click Install Running Bot Wa Server</li>
+        <li><i class="fas fa-check text-success"></i> Manajemen File & Database via Web</li>
+        <li><i class="fas fa-check text-success"></i> Jadwal Auto Backup & Restore</li>
+        <li><i class="fas fa-check text-success"></i> Alokasi RAM & CPU Fleksibel</li>
+        <li><i class="fas fa-check text-success"></i> DDoS Protection & Firewall</li>
+        <li><i class="fas fa-check text-success"></i> Lokasi Server: Jakarta & Singapura (latency rendah)</li>
+      </ul>
+
+      <h5>Cocok Untuk:</h5>
+      <p>Cocok untuk developer Script Bot WhatsApp, atau siapa saja yang ingin menjalankan Bot WhatsApp 24 Jam Nonstop tanpa ribet setup manual.</p>
+
+      <div class="text-center">
+        <a href="index.html#contact" class="btn btn-primary">Pesan Layanan Ini</a>
+      </div>
+    </div>
+
+    <!-- VPS DigitalOcean -->
+    <div class="service-detail-card">
+      <div class="text-center mb-4">
+        <i class="fas fa-server service-icon text-primary"></i>
+        <h2>VPS DigitalOcean</h2>
+      </div>
+      <p><strong>Apa itu?</strong><br>
+        Virtual Private Server berbasis cloud dari DigitalOcean — performa tinggi, uptime 99.9%, dan skalabilitas mudah. Cocok untuk website, aplikasi, bot, atau server pribadi.</p>
+      
+      <h5>Fitur Utama:</h5>
+      <ul>
+        <li><i class="fas fa-check text-success"></i> Sistem Operasi Pilihan (Ubuntu, Debian, CentOS, dll)</li>
+        <li><i class="fas fa-check text-success"></i> Root Access Penuh</li>
+        <li><i class="fas fa-check text-success"></i> SSD Storage & Bandwidth Tinggi</li>
+        <li><i class="fas fa-check text-success"></i> Snapshot & Image Backup</li>
+        <li><i class="fas fa-check text-success"></i> Monitoring Resource Real-time</li>
+        <li><i class="fas fa-check text-success"></i> Lokasi Server Global: New York, Singapore, London, dll</li>
+      </ul>
+
+      <h5>Cocok Untuk:</h5>
+      <p>Developer, startup, website bisnis, bot Discord/Telegram, atau siapa saja yang butuh server pribadi dengan kontrol penuh dan kecepatan tinggi.</p>
+
+      <div class="text-center">
+        <a href="index.html#contact" class="btn btn-primary">Pesan Layanan Ini</a>
+      </div>
+    </div>
+
+    <!-- Cloud DigitalOcean -->
+    <div class="service-detail-card">
+      <div class="text-center mb-4">
+        <i class="fas fa-cloud service-icon text-primary"></i>
+        <h2>Cloud DigitalOcean</h2>
+      </div>
+      <p><strong>Apa itu?</strong><br>
+        Solusi cloud infrastructure enterprise dari DigitalOcean — termasuk Kubernetes, Load Balancer, Managed Database, Spaces (object storage), dan lainnya. Untuk bisnis yang butuh skalabilitas tinggi.</p>
+      
+      <h5>Fitur Utama:</h5>
+      <ul>
+        <li><i class="fas fa-check text-success"></i> Kubernetes & Container Management</li>
+        <li><i class="fas fa-check text-success"></i> Load Balancer & Firewall Otomatis</li>
+        <li><i class="fas fa-check text-success"></i> Managed Database (MySQL, PostgreSQL, Redis)</li>
+        <li><i class="fas fa-check text-success"></i> Object Storage (Spaces) untuk file & media</li>
+        <li><i class="fas fa-check text-success"></i> API Integration & Terraform Support</li>
+        <li><i class="fas fa-check text-success"></i> Monitoring & Alerting Real-time</li>
+      </ul>
+
+      <h5>Cocok Untuk:</h5>
+      <p>Cocok untuk mu yang mau memulai langkah awal berbisnis di era digital dengan CLOUD DIGITAL OCEAN Menyediakan Kebutuhan Host.</p>
+
+      <div class="text-center">
+        <a href="index.html#contact" class="btn btn-primary">Pesan Layanan Ini</a>
+      </div>
+    </div>
+
+    <!-- Testimoni Section -->
+    <section class="py-5 bg-light" id="testimoni">
+      <div class="container text-center">
+        <h2 class="mb-4">Testimoni Pelanggan</h2>
+        <p class="lead">Simak pengalaman nyata dari pelanggan kami di Channel WhatsApp.</p>
+        <a href="https://whatsapp.com/channel/0029VaiV7SoJuyA6NhqHuW3D" target="_blank" class="btn btn-success btn-lg">
+          <i class="fab fa-whatsapp"></i> Buka Testimoni di WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- Tombol Kembali -->
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn-back">
+        ← Kembali ke Beranda
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>KYEE STORE</h5>
+          <p>Penyedia layanan hosting dan cloud server terpercaya sejak 2023. Fokus pada performa, keamanan, dan pelayanan pelanggan.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Halaman</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Beranda</a></li>
+            <li><a href="#" class="text-white">Detail Layanan</a></li>
+            <li><a href="index.html#contact" class="text-white">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Ikuti Kami</h5>
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <hr class="mt-4" style="background-color: #444;">
+      <p class="text-center mb-0">© 2025 KYEE STORE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

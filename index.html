@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KYEE STORE - Hosting Pterodactyl & Cloud DigitalOcean</title>
+  <link rel="icon" href="logo.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .btn-primary {
+      background-color: #667eea;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #5a6fd8;
+    }
+    .btn-next {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 30px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-next:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .price-placeholder {
+      font-style: italic;
+      color: #6c757d;
+      margin: 15px 0;
+    }
+    .section-next {
+      padding: 60px 0;
+      text-align: center;
+      background-color: #f1f5f9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="logo.png" alt="KYEE STORE Logo">
+        KYEE STORE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Hosting & Cloud Server Terbaik</h1>
+      <p class="lead">Nikmati performa tinggi dengan harga terjangkau untuk Pterodactyl, VPS, dan Cloud DigitalOcean.</p>
+      <a href="#services" class="btn btn-light btn-lg mt-3">Lihat Layanan</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5 bg-light" id="services">
+    <div class="container">
+      <h2 class="text-center mb-5">Layanan Kami</h2>
+      <div class="row">
+
+        <!-- Pterodactyl Hosting -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="text-center mb-4">
+              <i class="fas fa-feather-alt fa-3x text-primary"></i>
+            </div>
+            <h4 class="text-center">Hosting Pterodactyl</h4>
+            <p class="text-center">Panel Cloud server Yang Sudah Terpasangkan Dengan Egg Node.js </p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success"></i> RAM mulai 1GB</li>
+              <li><i class="fas fa-check text-success"></i> SSD Storage</li>
+              <li><i class="fas fa-check text-success"></i> DDoS Protection</li>
+              <li><i class="fas fa-check text-success"></i> Lokasi Server: Jakarta & Singapura</li>
+            </ul>
+            <div class="text-center mt-4">
+              <p class="price-placeholder">Hubungi kami untuk harga spesial!</p>
+              <a href="#contact" class="btn btn-primary w-100 mt-3">Pesan Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- VPS DigitalOcean -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="text-center mb-4">
+              <i class="fas fa-server fa-3x text-primary"></i>
+            </div>
+            <h4 class="text-center">VPS DigitalOcean</h4>
+            <p class="text-center">VPS berbasis cloud DigitalOcean dengan performa tinggi, uptime 99.9%, dan dukungan 24/7.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success"></i> CPU 1 Core</li>
+              <li><i class="fas fa-check text-success"></i> RAM 1GB - 32GB</li>
+              <li><i class="fas fa-check text-success"></i> SSD mulai 25GB</li>
+              <li><i class="fas fa-check text-success"></i> Bandwidth 1TB</li>
+            </ul>
+            <div class="text-center mt-4">
+              <p class="price-placeholder">Dapatkan penawaran terbaik hari ini!</p>
+              <a href="#contact" class="btn btn-primary w-100 mt-3">Pesan Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud DigitalOcean -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="text-center mb-4">
+              <i class="fas fa-cloud fa-3x text-primary"></i>
+            </div>
+            <h4 class="text-center">Cloud DigitalOcean</h4>
+            <p class="text-center">Solusi cloud enterprise untuk aplikasi, website, atau infrastruktur bisnis Anda.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success"></i> Scalable Resources</li>
+              <li><i class="fas fa-check text-success"></i> Load Balancer & Firewall</li>
+              <li><i class="fas fa-check text-success"></i> Snapshot & Backup Otomatis</li>
+              <li><i class="fas fa-check text-success"></i> API Integration</li>
+            </ul>
+            <div class="text-center mt-4">
+              <p class="price-placeholder">Konsultasi gratis! Hubungi tim kami.</p>
+              <a href="#contact" class="btn btn-primary w-100 mt-3">Pesan Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni Section -->
+  <section class="py-5 bg-white" id="testimoni">
+    <div class="container text-center">
+      <h2 class="mb-4">Testimoni Pelanggan</h2>
+      <p class="lead">Lihat pengalaman pelanggan kami melalui Channel WhatsApp resmi.</p>
+      <a href="https://whatsapp.com/channel/0029VaiV7SoJuyA6NhqHuW3D" target="_blank" class="btn btn-success btn-lg">
+        <i class="fab fa-whatsapp"></i> Lihat Testimoni di WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Tombol Lanjut ke Halaman Berikutnya -->
+  <section class="section-next">
+    <div class="container">
+      <h3>Ingin tahu lebih lanjut?</h3>
+      <p class="lead">Kunjungi halaman berikutnya untuk panduan, promo, atau informasi teknis lengkap.</p>
+      <a href="index2.html" class="btn-next mt-3">
+        Lanjut ke Halaman Berikutnya →
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5" id="contact" style="background-color: #f8f9fa;">
+    <div class="container text-center">
+      <h2>Kontak Kami</h2>
+      <p class="lead">Butuh bantuan? Tim kami siap membantu 24 jam!</p>
+      <p><i class="fab fa-discord"></i> discord.gg/kyeestore</p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6283854833221" style="color: inherit; text-decoration: none;">+62 838-5483-3221</a></p>
+      <a href="https://wa.me/6283854833221" class="btn btn-success mt-3">
+        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>KYEE STORE</h5>
+          <p>Penyedia layanan hosting dan cloud server terpercaya sejak 2023. Fokus pada performa, keamanan, dan pelayanan pelanggan.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Layanan</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Hosting Pterodactyl</a></li>
+            <li><a href="#" class="text-white">VPS DigitalOcean</a></li>
+            <li><a href="#" class="text-white">Cloud DigitalOcean</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Ikuti Kami</h5>
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <hr class="mt-4" style="background-color: #444;">
+      <p class="text-center mb-0">© 2025 KYEE STORE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
