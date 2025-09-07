@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Layanan - KYEE Official</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>KYEE<span>Hosting</span></h1></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Layanan</a></li>
+                    <li><a href="testimoni.html">Testimoni</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-container">
+                <img src="" alt="" class="service-detail-img" id="detail-img">
+                <div>
+                    <h1 id="detail-title">Loading...</h1>
+                    <div class="service-detail-desc" id="detail-desc"></div>
+                    <ul class="service-features" id="detail-features"></ul>
+                    <a href="checkout.html" class="btn-primary" id="order-btn">Pesan Sekarang via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 KYEE Official. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="services.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initDarkMode();
+            loadServiceDetail();
+        });
+
+        function loadServiceDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceId = parseInt(urlParams.get('id'));
+            const service = services.find(s => s.id === serviceId);
+
+            if (!service) {
+                document.querySelector('.service-detail-container').innerHTML = '<h2>Layanan tidak ditemukan</h2>';
+                return;
+            }
+
+            document.getElementById('detail-img').src = service.image;
+            document.getElementById('detail-title').textContent = service.name;
+            document.getElementById('detail-desc').textContent = service.description;
+            document.getElementById('detail-features').innerHTML = service.features.map(f => `<li>${f}</li>`).join('');
+
+            // Simpan ke localStorage untuk checkout
+            localStorage.setItem('selectedService', JSON.stringify(service));
+        }
+    </script>
+</body>
+</html>

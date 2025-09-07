@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Order - Kyee Hosting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>Kyee<span> Hosting</span></h1></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Layanan</a></li>
+                    <li><a href="index.html#testimoni">Testimoni</a></li>
+                    <li><a href="https://wa.me/6283854833221" target="_blank">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="services-section" style="padding: 4rem 0; background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">✅ Konfirmasi Pesanan</h2>
+            <p class="section-subtitle" style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: #475569;">
+                Silakan isi data di bawah ini untuk melanjutkan pemesanan via WhatsApp.
+            </p>
+            
+            <div class="service-card" style="max-width: 600px; margin: 0 auto; padding: 2rem; text-align: left;">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Nama Lengkap</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        class="form-control" 
+                        style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Inter', sans-serif;"
+                        placeholder="Masukkan nama Anda" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">No. WhatsApp</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        class="form-control" 
+                        style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Inter', sans-serif;"
+                        placeholder="083854833221" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Layanan yang Dipilih</label>
+                    <input 
+                        type="text" 
+                        id="service" 
+                        class="form-control" 
+                        style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Inter', sans-serif; background: #f1f5f9;"
+                        readonly
+                    >
+                </div>
+
+                <button class="btn-service" id="whatsapp-btn" style="width: 100%; padding: 0.75rem; font-size: 1rem;">
+                    📩 Kirim Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kyee Hosting. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dark Mode
+            const toggleBtn = document.getElementById('theme-toggle');
+            if (toggleBtn) {
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    document.body.classList.add('dark-mode');
+                    toggleBtn.textContent = '☀️';
+                }
+
+                toggleBtn.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-mode');
+                    if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('darkMode', 'enabled');
+                        toggleBtn.textContent = '☀️';
+                    } else {
+                        localStorage.setItem('darkMode', 'disabled');
+                        toggleBtn.textContent = '🌙';
+                    }
+                });
+            }
+
+            // Set layanan yang dipilih
+            const service = localStorage.getItem('selectedServiceName') || "Hosting Pterodactyl";
+            document.getElementById('service').value = service;
+
+            // Kirim ke WhatsApp
+            document.getElementById('whatsapp-btn').addEventListener('click', function() {
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const serviceName = document.getElementById('service').value;
+
+                if (!name || !phone) {
+                    alert('❌ Nama dan WhatsApp wajib diisi!');
+                    return;
+                }
+
+                let message = `Halo Kyee Hosting!%0A%0A`;
+                message += `Saya ingin memesan layanan:%0A`;
+                message += `• ${serviceName}%0A%0A`;
+                message += `*Data Saya:*%0A`;
+                message += `Nama: ${name}%0A`;
+                message += `WA: ${phone}%0A%0A`;
+                message += `Mohon info detail harga dan cara pembayaran. Terima kasih!`;
+
+                const adminWA = "6283854833221"; // ✅ NOMOR ADMIN SUDAH DIUBAH
+                window.location.href = `https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`;
+            });
+        });
+    </script>
+</body>
+</html>
