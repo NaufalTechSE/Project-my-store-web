@@ -139,6 +139,13 @@ body {
     border-radius: 2px;
 }
 
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #475569;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -200,11 +207,31 @@ body {
     background: #f1f5f9;
 }
 
-.testimoni-section p,
-.cta-section p {
-    margin: 1rem auto 2rem;
-    max-width: 600px;
-    color: #475569;
+/* === Form Styling === */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3b82f6;
 }
 
 /* === Footer === */
@@ -215,7 +242,7 @@ body {
     text-align: center;
 }
 
-/* === Dark Mode === */
+/* === Dark Mode Fix — SEMUA TEKS JADI PUTIH === */
 .dark-mode {
     --bg: #0f172a;
     --text: #f8fafc;
@@ -223,6 +250,9 @@ body {
     --border: #334155;
     --accent: #60a5fa;
     --secondary: #a78bfa;
+    --input-bg: #1e293b;
+    --input-border: #334155;
+    --input-text: #f8fafc;
 }
 
 .dark-mode body {
@@ -230,17 +260,20 @@ body {
     color: var(--text);
 }
 
-.dark-mode .header,
-.dark-mode .services-section,
-.dark-mode .service-card,
-.dark-mode .testimoni-section,
-.dark-mode .cta-section {
-    background-color: var(--card);
-    color: var(--text);
+.dark-mode .header {
+    background: var(--card);
 }
 
-.dark-mode .nav a {
-    color: #cbd5e1;
+.dark-mode .logo h1,
+.dark-mode .logo span,
+.dark-mode .nav a,
+.dark-mode .form-label,
+.dark-mode .section-title,
+.dark-mode .section-subtitle,
+.dark-mode .service-title,
+.dark-mode .service-desc,
+.dark-mode .footer p {
+    color: var(--text);
 }
 
 .dark-mode .nav a:hover,
@@ -248,16 +281,30 @@ body {
     color: var(--accent);
 }
 
-.dark-mode .section-title::after {
-    background: var(--accent);
-}
-
-.dark-mode .service-title {
+.dark-mode .theme-toggle {
     color: var(--text);
 }
 
-.dark-mode .service-desc {
-    color: #94a3b8;
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+.dark-mode .services-section,
+.dark-mode .testimoni-section,
+.dark-mode .cta-section {
+    background: var(--bg);
+}
+
+.dark-mode .service-card {
+    background: var(--card);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.dark-mode .form-control {
+    background: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--input-text);
 }
 
 .dark-mode .btn-primary {
@@ -267,10 +314,7 @@ body {
 
 .dark-mode .btn-service {
     background: var(--accent);
-}
-
-.dark-mode .footer {
-    background: #0f172a;
+    color: var(--bg);
 }
 
 /* === Responsive === */
