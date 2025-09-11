@@ -1,135 +1,122 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hosting & Cloud Server Terbaik - Kyee Hosting</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosting & Cloud Server Terbaik - Kyee Hosting</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><h1>Kyee<span> Hosting</span></h1></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Layanan</a></li>
-                    <li><a href="#testimoni">Testimoni</a></li>
-                    <li><a href="https://wa.me/6283854833221" target="_blank">Kontak</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="theme-toggle" id="theme-toggle">🌙</button>
-            </div>
-        </div>
-    </header>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><h1>Kyee<span> Hosting</span></h1></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="https://wa.me/6283854833221" target="_blank">Kontak</a></li>
+          <li><a href="admin.html">🔑 Admin</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Hosting & Cloud Server <span>Terbaik</span></h1>
-            <p>Nikmati performa tinggi dengan harga terjangkau untuk Pterodactyl, VPS, dan Cloud DigitalOcean.</p>
-            <a href="#services" class="btn-primary">Lihat Layanan</a>
-        </div>
-    </section>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Hosting & Cloud Server <span>Terbaik</span></h1>
+      <p>Nikmati performa tinggi dengan harga terjangkau untuk Pterodactyl, VPS, dan Cloud DigitalOcean.</p>
+      <a href="#services" class="btn-primary">Lihat Layanan</a>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <h2 class="section-title">✨ Layanan Kami</h2>
-            <div class="services-grid">
-                <!-- Service 1: Hosting Pterodactyl -->
-                <div class="service-card">
-                    <div class="service-info">
-                        <h3 class="service-title">Hosting Pterodactyl</h3>
-                        <p class="service-desc">Panel Cloud server Yang Sudah Terpasangkan Dengan Egg Node.js</p>
-                        <a href="javascript:void(0)" class="btn-service" onclick="selectService('Hosting Pterodactyl')">
-                            📩 Hubungi kami untuk harga spesial!
-                        </a>
-                    </div>
-                </div>
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2 class="section-title">✨ Layanan Kami</h2>
+      <div class="services-grid" id="servicesGrid">
+        <!-- Layanan akan dimuat otomatis -->
+      </div>
+    </div>
+  </section>
 
-                <!-- Service 2: VPS DigitalOcean -->
-                <div class="service-card">
-                    <div class="service-info">
-                        <h3 class="service-title">VPS DigitalOcean</h3>
-                        <p class="service-desc">VPS berbasis cloud DigitalOcean dengan performa tinggi, uptime 99.9%, dan dukungan 24/7.</p>
-                        <a href="javascript:void(0)" class="btn-service" onclick="selectService('VPS DigitalOcean')">
-                            📩 Dapatkan penawaran terbaik hari ini!
-                        </a>
-                    </div>
-                </div>
+  <section class="testimoni-section" id="testimoni">
+    <div class="container">
+      <h2 class="section-title">💬 Testimoni Pelanggan</h2>
+      <p>Lihat pengalaman pelanggan kami melalui Channel WhatsApp resmi.</p>
+      <a href="https://whatsapp.com/channel/0029VaiV7SoJuyA6NhqHuW3D" target="_blank" class="btn-primary">
+        Lihat Testimoni di WhatsApp Channel
+      </a>
+    </div>
+  </section>
 
-                <!-- Service 3: Cloud DigitalOcean -->
-                <div class="service-card">
-                    <div class="service-info">
-                        <h3 class="service-title">Cloud DigitalOcean</h3>
-                        <p class="service-desc">Solusi cloud enterprise untuk aplikasi, website, atau infrastruktur bisnis Anda.</p>
-                        <a href="javascript:void(0)" class="btn-service" onclick="selectService('Cloud DigitalOcean')">
-                            📩 Konsultasi gratis! Hubungi tim kami.
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ingin tahu lebih lanjut?</h2>
+      <p>Kunjungi halaman berikutnya untuk panduan, promo, atau informasi teknis lengkap.</p>
+      <a href="https://wa.me/6283854833221" class="btn-primary">Lanjut ke Halaman Berikutnya →</a>
+    </div>
+  </section>
 
-    <!-- Testimoni Section -->
-    <section class="testimoni-section" id="testimoni">
-        <div class="container">
-            <h2 class="section-title">💬 Testimoni Pelanggan</h2>
-            <p>Lihat pengalaman pelanggan kami melalui Channel WhatsApp resmi.</p>
-            <a href="https://wa.me/6283854833221" target="_blank" class="btn-primary">Lihat Testimoni di WhatsApp</a>
-        </div>
-    </section>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Kyee Hosting. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ingin tahu lebih lanjut?</h2>
-            <p>Kunjungi halaman berikutnya untuk panduan, promo, atau informasi teknis lengkap.</p>
-            <a href="https://wa.me/6283854833221" class="btn-primary">Lanjut ke Halaman Berikutnya →</a>
-        </div>
-    </section>
+  <script src="services.js"></script>
+  <script>
+    function renderServices() {
+      const data = JSON.parse(localStorage.getItem("servicesData")) || services;
+      const grid = document.getElementById("servicesGrid");
+      grid.innerHTML = "";
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kyee Hosting. All Rights Reserved.</p>
-        </div>
-    </footer>
+      data.forEach(s => {
+        const card = document.createElement("div");
+        card.classList.add("service-card");
+        card.innerHTML = `
+          <div class="service-info">
+            <h3 class="service-title">${s.name}</h3>
+            <p class="service-desc">${s.description}</p>
+            <a href="service.html?id=${s.id}" class="btn-service">
+              📩 Lihat Detail & Pesan
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
 
-    <!-- Script -->
-    <script>
-        function selectService(serviceName) {
-            localStorage.setItem('selectedServiceName', serviceName);
-            window.location.href = 'checkout.html';
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        toggleBtn.textContent = '☀️';
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('darkMode', 'enabled');
+          toggleBtn.textContent = '☀️';
+        } else {
+          localStorage.setItem('darkMode', 'disabled');
+          toggleBtn.textContent = '🌙';
         }
+      });
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleBtn = document.getElementById('theme-toggle');
-            if (!toggleBtn) return;
-
-            if (localStorage.getItem('darkMode') === 'enabled') {
-                document.body.classList.add('dark-mode');
-                toggleBtn.textContent = '☀️';
-            }
-
-            toggleBtn.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                if (document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('darkMode', 'enabled');
-                    toggleBtn.textContent = '☀️';
-                } else {
-                    localStorage.setItem('darkMode', 'disabled');
-                    toggleBtn.textContent = '🌙';
-                }
-            });
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderServices();
+      initTheme();
+    });
+  </script>
 </body>
 </html>

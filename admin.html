@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Kyee Hosting</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
+    .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f4f4f4; }
+    .btn { padding: 6px 10px; cursor: pointer; border: none; border-radius: 5px; margin-left: 5px; }
+    .btn-edit { background: #2196f3; color: #fff; }
+    .btn-delete { background: #f44336; color: #fff; }
+    .btn-add { background: #4caf50; color: #fff; }
+    .btn-back { background: #555; color: #fff; }
+
+    /* Login form */
+    #loginForm { max-width: 400px; margin: 5rem auto; padding: 2rem; border: 1px solid #ccc; border-radius: 10px; text-align: center; }
+    #loginForm input { padding: 10px; width: 100%; margin-bottom: 1rem; }
+    #loginForm button { width: 100%; }
+  </style>
+</head>
+<body>
+  <!-- Form Login -->
+  <div id="loginForm" style="display:none;">
+    <h2>🔑 Login Admin</h2>
+    <input type="password" id="adminPassword" placeholder="Masukkan password">
+    <button class="btn btn-add" onclick="checkLogin()">Login</button>
+    <br><br>
+    <a href="index.html" class="btn btn-back">⬅️ Kembali ke Home</a>
+  </div>
+
+  <!-- Konten Admin -->
+  <div class="admin-container" id="adminPanel" style="display:none;">
+    <div class="admin-header">
+      <h2>📊 Admin Panel - Layanan</h2>
+      <div>
+        <a href="index.html" class="btn btn-back">⬅️ Home</a>
+        <button class="btn btn-add" onclick="showForm()">+ Tambah Layanan</button>
+        <button class="btn btn-delete" onclick="logout()">🚪 Logout</button>
+      </div>
+    </div>
+
+    <table id="serviceTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Kategori</th>
+          <th>Deskripsi</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Form Tambah/Edit -->
+    <div id="formContainer" style="display:none; margin-top:2rem;">
+      <h3 id="formTitle">Tambah Layanan</h3>
+      <input type="hidden" id="serviceId">
+      <label>Nama: <input type="text" id="serviceName"></label><br><br>
+      <label>Kategori: <input type="text" id="serviceCategory"></label><br><br>
+      <label>Deskripsi: <textarea id="serviceDesc"></textarea></label><br><br>
+      <button class="btn btn-add" onclick="saveService()">💾 Simpan</button>
+      <button class="btn" onclick="cancelForm()">❌ Batal</button>
+    </div>
+  </div>
+
+  <script src="services.js"></script>
+  <script>
+    const ADMIN_PASS = "KyeeAdmin123"; // Ganti password di sini
+    let servicesData = JSON.parse(localStorage.getItem("servicesData")) || services;
+    let editing = false;
+
+    document.addEventListener("DOMContentLoaded", function() {
+      if (localStorage.getItem("isAdmin") === "true") {
+        showAdminPanel();
+      } else {
+        document.getElementById("loginForm").style.display = "block";
+      }
+    });
+
+    function checkLogin() {
+      const inputPass = document.getElementById("adminPassword").value;
+      if (inputPass === ADMIN_PASS) {
+        localStorage.setItem("isAdmin", "true");
+        showAdminPanel();
+      } else {
+        alert("❌ Password salah!");
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("isAdmin");
+      location.reload();
+    }
+
+    function showAdminPanel() {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("adminPanel").style.display = "block";
+      renderTable();
+    }
+
+    function renderTable() {
+      const tbody = document.querySelector("#serviceTable tbody");
+      tbody.innerHTML = "";
+      servicesData.forEach(s => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${s.id}</td>
+          <td>${s.name}</td>
+          <td>${s.category}</td>
+          <td>${s.description}</td>
+          <td>
+            <button class="btn btn-edit" onclick="editService(${s.id})">Edit</button>
+            <button class="btn btn-delete" onclick="deleteService(${s.id})">Hapus</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+      localStorage.setItem("servicesData", JSON.stringify(servicesData));
+    }
+
+    function showForm() {
+      document.getElementById("formContainer").style.display = "block";
+      document.getElementById("formTitle").textContent = "Tambah Layanan";
+      editing = false;
+      document.getElementById("serviceId").value = "";
+      document.getElementById("serviceName").value = "";
+      document.getElementById("serviceCategory").value = "";
+      document.getElementById("serviceDesc").value = "";
+    }
+
+    function cancelForm() {
+      document.getElementById("formContainer").style.display = "none";
+    }
+
+    function saveService() {
+      const id = document.getElementById("serviceId").value;
+      const name = document.getElementById("serviceName").value;
+      const category = document.getElementById("serviceCategory").value;
+      const desc = document.getElementById("serviceDesc").value;
+
+      if (!name || !category || !desc) {
+        alert("Semua field wajib diisi!");
+        return;
+      }
+
+      if (editing) {
+        const index = servicesData.findIndex(s => s.id == id);
+        servicesData[index].name = name;
+        servicesData[index].category = category;
+        servicesData[index].description = desc;
+      } else {
+        servicesData.push({
+          id: servicesData.length ? servicesData[servicesData.length - 1].id + 1 : 1,
+          name, category, description: desc, image: "", features: []
+        });
+      }
+
+      renderTable();
+      cancelForm();
+    }
+
+    function editService(id) {
+      const s = servicesData.find(x => x.id === id);
+      document.getElementById("formContainer").style.display = "block";
+      document.getElementById("formTitle").textContent = "Edit Layanan";
+      document.getElementById("serviceId").value = s.id;
+      document.getElementById("serviceName").value = s.name;
+      document.getElementById("serviceCategory").value = s.category;
+      document.getElementById("serviceDesc").value = s.description;
+      editing = true;
+    }
+
+    function deleteService(id) {
+      if (confirm("Yakin ingin hapus layanan ini?")) {
+        const index = servicesData.findIndex(x => x.id === id);
+        servicesData.splice(index, 1);
+        renderTable();
+      }
+    }
+  </script>
+</body>
+</html>
